@@ -1,2 +1,3 @@
 # GH Quick Actions
+
 A simple web extension that adds a set of predefined icons as quick actions to the GitHub "add PR comment" form
