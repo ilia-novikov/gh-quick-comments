@@ -42,6 +42,16 @@ const COMMENTS = [
 
 var wasCommentSectionUpdated = false;
 
+function onCommentButtonClick(icon) {
+  console.log(`Clicked: ${icon}`);
+}
+
+function makeCommentButtonCallback(icon) {
+  return function () {
+    onCommentButtonClick(icon);
+  };
+}
+
 function onCommentSectionAdded(el) {
   wasCommentSectionUpdated = true;
 
@@ -51,10 +61,10 @@ function onCommentSectionAdded(el) {
     const link = document.createElement("a");
 
     link.title = comment.title;
-    link.href = "javascript:void(0);";
     link.setAttribute("data-view-component", "true");
     link.className = "IssueLabel hx_IssueLabel width-fit mb-1 mr-1";
 
+    link.style.setProperty("cursor", "pointer");
     link.style.setProperty("--label-r", comment.rgb[0].toString());
     link.style.setProperty("--label-g", comment.rgb[1].toString());
     link.style.setProperty("--label-b", comment.rgb[2].toString());
@@ -65,6 +75,8 @@ function onCommentSectionAdded(el) {
     const span = document.createElement("span");
     span.className = "css-truncate css-truncate-target width-fit";
     span.textContent = comment.icon;
+
+    link.addEventListener("click", makeCommentButtonCallback(comment.icon));
 
     link.appendChild(span);
     container.appendChild(link);
