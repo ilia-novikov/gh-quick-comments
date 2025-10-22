@@ -2,8 +2,41 @@ const COMMENTS = [
   {
     icon: "❗",
     title: "Blocking: change requested or at least discussion required",
-    rgb: [121, 230, 184],
-    hsl: [154, 68, 68],
+    rgb: [230, 121, 121],
+    hsl: [360, 68, 68],
+  },
+  {
+    icon: "💭",
+    title:
+      "Thinkinkg out loud: this isn't necessarily actionable, but indicates if the reviewer is unsure about a change",
+    rgb: [121, 217, 230],
+    hsl: [187, 68, 68],
+  },
+  {
+    icon: "❓",
+    title: "A question from the reviewer",
+    rgb: [121, 217, 230],
+    hsl: [187, 68, 68],
+  },
+  {
+    icon: "💡",
+    title:
+      "Idea or suggestion: usually offering another way of solving the same problem with some additional benefit",
+    rgb: [121, 217, 230],
+    hsl: [187, 68, 68],
+  },
+  {
+    icon: "💭",
+    title:
+      "Small correction: usually a typo, translation change or something similar",
+    rgb: [121, 217, 230],
+    hsl: [187, 68, 68],
+  },
+  {
+    icon: "✨",
+    title: "Compliment: Nice job! Great change you joyful superstar :)",
+    rgb: [121, 230, 145],
+    hsl: [133, 68, 68],
   },
 ];
 
