@@ -43,7 +43,21 @@ const COMMENTS = [
 var wasCommentSectionUpdated = false;
 
 function onCommentButtonClick(icon) {
-  console.log(`Clicked: ${icon}`);
+  const area = document.querySelector(
+    'textarea[placeholder="Leave a comment"]'
+  );
+  if (!area) {
+    return;
+  }
+
+  const currentText = area.value.trim();
+  if (currentText) {
+    area.value = `${icon} ` + currentText;
+  } else {
+    area.value = `${icon} `;
+  }
+
+  area.focus();
 }
 
 function makeCommentButtonCallback(icon) {
