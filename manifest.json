@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+  "name": "GitHub Quick Comments",
+  "version": "1.0",
+
+  "description": "Adds quick comments to the GitHub PR comment form.",
+
+  "icons": {
+    "48": "icons/border-48.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.github.com/*"],
+      "js": ["quick_comments.js"]
+    }
+  ]
+}
