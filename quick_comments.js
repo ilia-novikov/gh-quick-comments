@@ -1,8 +1,12 @@
+var wasCommentSectionUpdated = false;
+
 function onCommentSectionAdded(el) {
-  console.log(el);
+  wasCommentSectionUpdated = true;
+
+  console.log(el.children[0].children[0]);
 }
 
-window.addEventListener("load", function () {
+window.addEventListener("pageshow", function () {
   console.log("GH Quick Comments: loaded");
 
   var observer = new MutationObserver(function (mutations) {
@@ -10,6 +14,11 @@ window.addEventListener("load", function () {
       'div[data-marker-id="new-comment"]'
     );
     if (!commentSection) {
+      wasCommentSectionUpdated = false;
+      return;
+    }
+
+    if (wasCommentSectionUpdated) {
       return;
     }
 
