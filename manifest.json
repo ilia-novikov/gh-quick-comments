@@ -4,12 +4,6 @@
   "version": "1.0",
   "description": "Adds quick comments to the GitHub PR comment form.",
 
-  "browser_specific_settings": {
-    "gecko": {
-      "id": "gh-quick-comments@nvkv.me"
-    }
-  },
-
   "icons": {
     "48": "icons/main-48.png",
     "96": "icons/main-96.png"
