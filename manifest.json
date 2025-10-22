@@ -1,18 +1,26 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "GitHub Quick Comments",
   "version": "1.0",
-
   "description": "Adds quick comments to the GitHub PR comment form.",
 
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "gh-quick-comments@nvkv.me"
+    }
+  },
+
   "icons": {
-    "48": "icons/border-48.png"
+    "48": "icons/main-48.png",
+    "96": "icons/main-96.png"
   },
 
   "content_scripts": [
     {
-      "matches": ["*://*.github.com/*"],
+      "matches": ["https://*.github.com/*"],
       "js": ["quick_comments.js"]
     }
-  ]
+  ],
+
+  "host_permissions": ["https://*.github.com/*"]
 }
